@@ -9,6 +9,9 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.0</TargetFramework>
+    <Authors>Pedro Henrique Fernandes Marques Leitão</Authors>
+    <PackageProjectUrl>https://phcalculatorservice.azurewebsites.net/</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/phfmleitao/PhCalculatorService</RepositoryUrl>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">

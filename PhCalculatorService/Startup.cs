@@ -22,7 +22,7 @@ namespace PhCalculatorService
 
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddMvc();
+            services.AddMvc().AddMvcOptions(options => options.EnableEndpointRouting = false);
 
             services.AddSwaggerGen(c =>
             {
@@ -52,25 +52,13 @@ namespace PhCalculatorService
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-            if (env.IsDevelopment())
-            {
-                app.UseDeveloperExceptionPage();
-            }
-
-            app.UseHttpsRedirection();
-            app.UseRouting();
-            app.UseAuthorization();
-            app.UseEndpoints(endpoints => 
-            { 
-                endpoints.MapControllers(); 
-            });
-
             app.UseSwagger();
             app.UseSwaggerUI(c =>
             {
                 c.SwaggerEndpoint("/swagger/v1/swagger.json", "PhCalculatorService API V1");
-                c.RoutePrefix = string.Empty;
             });
+
+            app.UseMvc();
         }
     }
 }
