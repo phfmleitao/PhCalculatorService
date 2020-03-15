@@ -15,9 +15,10 @@ namespace PhCalculatorService.Controllers
             _logger = logger;
         }
 
-        public ActionResult<string> Index()
+        [HttpGet("[action]")]
+        public IActionResult Index()
         {
-            return "Calculator!";
+            return Content("Calculator!");
         }
 
         [HttpGet("[action]/{number1:int}/{number2:int}")]
