@@ -2,7 +2,7 @@ using PhCalculatorService.Core;
 using System;
 using Xunit;
 
-namespace PhCalculatorServiceTests
+namespace PhCalculatorServiceTests.Core
 {
     public class CalculatorTests
     {
@@ -15,6 +15,19 @@ namespace PhCalculatorServiceTests
         {
             var calculator = new Calculator();
             var actual = calculator.Sum(number1, number2);
+
+            Assert.Equal(expected, actual);
+        }
+
+        [Theory]
+        [InlineData(3, 1, 2)]
+        [InlineData(300, 125, 175)]
+        [InlineData(-16, 4, -20)]
+        [InlineData(-8, -2, -6)]
+        public void Subtract_BasicSubtractionOfTwoNumbers(int number1, int number2, int expected)
+        {
+            var calculator = new Calculator();
+            var actual = calculator.Subtract(number1, number2);
 
             Assert.Equal(expected, actual);
         }

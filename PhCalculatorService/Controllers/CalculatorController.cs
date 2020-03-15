@@ -15,14 +15,28 @@ namespace PhCalculatorService.Controllers
             _logger = logger;
         }
 
-        [HttpGet("[action]")]
-        public IActionResult Index()
+        /// <summary>
+        /// Sum 2 integer numbers.
+        /// </summary>
+        /// <param name="number1">First Number</param>
+        /// <param name="number2">Second Number</param>
+        /// <returns>sum result between number1 and number2</returns>
+        [HttpGet("[action]/{number1:int}/{number2:int}")]
+        public IActionResult Sum(int number1, int number2)
         {
-            return Content("Calculator!");
+            var calculator = new Calculator();
+            var sumResultAsString = calculator.Sum(number1, number2).ToString();
+            return Content(sumResultAsString);
         }
 
+        /// <summary>
+        /// Subtract 2 integer numbers.
+        /// </summary>
+        /// <param name="number1">First Number</param>
+        /// <param name="number2">Second Number</param>
+        /// <returns>subtract result between number1 and number2</returns>
         [HttpGet("[action]/{number1:int}/{number2:int}")]
-        public IActionResult Somar(int number1, int number2)
+        public IActionResult Subtract(int number1, int number2)
         {
             var calculator = new Calculator();
             var sumResultAsString = calculator.Sum(number1, number2).ToString();
