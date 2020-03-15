@@ -17,7 +17,7 @@ namespace PhCalculatorService.Controller
         [HttpGet]
         public string Get()
         {
-            return "Calculator Controller";
+            return "Calculator Controller alterado!";
         }
     }
 }
