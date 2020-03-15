@@ -1,4 +1,4 @@
-﻿namespace PhCalculatorService
+﻿namespace PhCalculatorService.Core
 {
     public class Calculator
     {

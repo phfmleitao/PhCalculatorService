@@ -1,4 +1,4 @@
-using PhCalculatorService;
+using PhCalculatorService.Core;
 using System;
 using Xunit;
 
