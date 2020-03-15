@@ -7,7 +7,7 @@ namespace PhCalculatorServiceTests
     public class CalculatorTests
     {
         [Theory]
-        [InlineData(1, 3, 4)]
+        [InlineData(1, 3, 5)]
         [InlineData(300, 125, 425)]
         [InlineData(-16, 4, -12)]
         [InlineData(-8, -2, -10)]
