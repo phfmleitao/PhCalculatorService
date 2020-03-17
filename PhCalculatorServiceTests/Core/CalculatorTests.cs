@@ -31,5 +31,18 @@ namespace PhCalculatorServiceTests.Core
 
             Assert.Equal(expected, actual);
         }
+
+        [Theory]
+        [InlineData(3, 1, 3)]
+        [InlineData(2, 6, 12)]
+        [InlineData(-2, -4, 8)]
+        [InlineData(-2, 4, -8)]
+        public void Multiply_BasicMultiplicationOfTwoNumbers(int number1, int number2, int expected)
+        {
+            var calculator = new Calculator();
+            var actual = calculator.Multiply(number1, number2);
+
+            Assert.Equal(expected, actual);
+        }
     }
 }
