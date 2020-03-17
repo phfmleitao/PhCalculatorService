@@ -25,8 +25,8 @@ namespace PhCalculatorService.Controllers
         public IActionResult Sum(int number1, int number2)
         {
             var calculator = new Calculator();
-            var sumResultAsString = calculator.Sum(number1, number2).ToString();
-            return Content(sumResultAsString);
+            var resultAsString = calculator.Sum(number1, number2).ToString();
+            return Content(resultAsString);
         }
 
         /// <summary>
@@ -39,8 +39,22 @@ namespace PhCalculatorService.Controllers
         public IActionResult Subtract(int number1, int number2)
         {
             var calculator = new Calculator();
-            var sumResultAsString = calculator.Sum(number1, number2).ToString();
-            return Content(sumResultAsString);
+            var resultAsString = calculator.Subtract(number1, number2).ToString();
+            return Content(resultAsString);
+        }
+
+        /// <summary>
+        /// Multiply 2 integer numbers.
+        /// </summary>
+        /// <param name="number1">First Number</param>
+        /// <param name="number2">Second Number</param>
+        /// <returns>multiplication result between number1 and number2</returns>
+        [HttpGet("[action]/{number1:int}/{number2:int}")]
+        public IActionResult Multiply(int number1, int number2)
+        {
+            var calculator = new Calculator();
+            var resultAsString = calculator.Multiply(number1, number2).ToString();
+            return Content(resultAsString);
         }
     }
 }
